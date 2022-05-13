@@ -2,7 +2,7 @@ const flex = document.getElementById("flexBox")
 
 const generatePokemonImageElement = (pokemonIndex) => {
   const img = document.createElement("img") 
-  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemonIndex}.svg`
   img.className = "img"
 
   return img
@@ -10,15 +10,15 @@ const generatePokemonImageElement = (pokemonIndex) => {
 
 const generatePokemonNameElement = (pokemonName, pokemonIndex) => {
   const pokemonNameElement = document.createElement("div")
-  pokemonNameElement.textContent = `#${pokemonIndex} ${pokemonName}`
+  pokemonNameElement.textContent = `#${pokemonIndex}` + "  " +  `${pokemonName}`
   
   return pokemonNameElement
 }
-const generatePokemonTypesElement = (pokemonTypes) => {
-  const pokemonTypesElement = document.createElement("div")
-  pokemonTypesElement.textContent = `${pokemonTypes}`
+const generatePokemonTypesElement = (pokemonType) => {
+  const pokemonTypeElement = document.createElement("div")
+  pokemonTypeElement.textContent = `${pokemonType}`
   
-  return pokemonTypesElement
+  return pokemonTypeElement
 
 }
 
@@ -34,11 +34,11 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
 
       const imgElement = generatePokemonImageElement(pokemonNumber)
       const pokemonNameElement = generatePokemonNameElement(pokemon.name, pokemonNumber)
-      const pokemonTypesElement = generatePokemonTypesElement(pokemon.type)
+      //const pokemonTypeElement = generatePokemonTypesElement(pokemon.type)
  
       cell.appendChild(imgElement)
       cell.appendChild(pokemonNameElement)
-      //cell.appendChild(pokemonTypesElement)
+      //cell.appendChild(pokemonTypeElement)
 
  
       cell.classList.add("item")
