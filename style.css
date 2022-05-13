@@ -1,0 +1,16 @@
+.item {
+    margin: 0 auto;
+    padding: 20px 50px;
+ 
+  }
+  
+#flexBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    
+  }
+
+  
+
+ 
