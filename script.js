@@ -14,18 +14,19 @@ const generatePokemonNameElement = (pokemonName, pokemonIndex) => {
   
   return pokemonNameElement
 }
-const generatePokemonTypeElement = (pokemonTypes, pokemonIndex) => {
-  const pokemonTypeElement = document.createElement("div")
-  pokemonTypeElement.textContent = `#${pokemonIndex} ${pokemonTypes}`
+const generatePokemonTypesElement = (pokemonTypes) => {
+  const pokemonTypesElement = document.createElement("div")
+  pokemonTypesElement.textContent = `${pokemonTypes}`
   
-  return pokemonTypeElement
+  return pokemonTypesElement
+
 }
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
   .then(res => res.json())
   .then(data => {
     const pokemonList = data.results
-    
+    console.log(data)
  
     pokemonList.forEach(function(pokemon, index) {
       const cell = document.createElement("div")
@@ -33,13 +34,12 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
 
       const imgElement = generatePokemonImageElement(pokemonNumber)
       const pokemonNameElement = generatePokemonNameElement(pokemon.name, pokemonNumber)
-      const pokemonTypeElement = generatePokemonTypeElement(pokemon.types, pokemonNumber)
+      const pokemonTypesElement = generatePokemonTypesElement(pokemon.type)
  
       cell.appendChild(imgElement)
       cell.appendChild(pokemonNameElement)
-      cell.appendChild(pokemonTypeElement)
+      //cell.appendChild(pokemonTypesElement)
 
-      console.log(pokemonTypeElement)
  
       cell.classList.add("item")
       flex.appendChild(cell)

@@ -1,14 +1,58 @@
+body {
+  background-image: url("pokemon-bg.jpeg");
+  background-size: 200%;
+}
+
 .item {
     margin: 0 auto;
-    padding: 20px 50px;
- 
+    padding: 50px 60px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    background-color: rgb(255, 46, 46);
+    box-shadow: 0 0 20px purple;
+    color: rgb(0, 0, 0);
+    font-family: fantasy;
+    font-size: 22px;
+    font-style: bold;
+    animation-name: items;
+    animation-duration: 9s;
+  }
+
+  @keyframes items {
+    0% {
+      background-color: rgb(255, 60, 60);
+      border-radius: 25px;
+    }
+    25% {
+      background-color: rgb(225, 255, 0);
+      border-radius: 0px;
+    }
+    50% {
+      background-color: rgb(44, 255, 244);
+      border-radius: 75px;
+    }
+    75% {
+      background-color: rgb(153, 44, 255);
+      border-radius: 100px;
+    }
+    100% {
+      background-color: rgb(255, 44, 44);
+      border-radius: 25px;
+    }
   }
   
 #flexBox {
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    width: 75%;
+    margin: 0 auto;
     
+  }
+
+  .img {
+    width: 150px;
   }
 
   
